@@ -38,6 +38,8 @@ class ProductsController extends Controller
         "category_id" => "required"
       ];
 
+      $this->validate($req, $rules);
+
       $product = new Product();
 
       $product->name = $req->name;
@@ -57,5 +59,15 @@ class ProductsController extends Controller
       $product->delete();
 
       return redirect("/products");
+    }
+
+    public function search() {
+      return view("search");
+    }
+
+    public function apiSearch(Request $req) {
+      $products = Product::where("name", "like", "%" . $req["search"] . "%")->get();
+
+      return $products;
     }
 }

@@ -4,9 +4,20 @@
   Add Product
 @endsection
 
+@section("js")
+  <script type="text/javascript" src="/js/addProduct.js">
+
+  </script>
+@endsection
+
 @section("main")
   <h1>Add a product</h1>
-  <form method="POST" action="/products/add">
+  <div class="errores">
+    <ul>
+      
+    </ul>
+  </div>
+  <form method="POST" action="/products/add" class="form-add-product">
       @csrf
 
       <div class="form-group row">

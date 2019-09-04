@@ -27,6 +27,8 @@ Route::get("/product/{id}", "ProductsController@find");
 Route::get("/brand/{id}", "BrandsController@find");
 Route::get("/category/{id}", "CategoriesController@find");
 
+Route::get("/search", "ProductsController@search");
+
 Route::get("/products/add", "ProductsController@add")->middleware("auth");
 
 Route::post("/products/add", "ProductsController@store")->middleware("auth");

@@ -18,6 +18,7 @@
             <li><a href="/brands">Brands</a></li>
             <li><a href="/categories">Categories</a></li>
             <li><a href="/products">Products</a></li>
+            <li><a href="/search">Search</a></li>
             @if (Auth::check())
               <li>
                 <a href="/products/add">Add a product</a>
